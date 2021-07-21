@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<launch>
+    <node name="cfs_bridge" pkg="cfs_bridge" type="cfs_bridge.py" output="screen">
+        <param name="bundle_path" value="."/>
+        <param name="mission" value="mission"/>
+        <param name="target" value="cpu1"/>
+        <param name="msg_package" value="my_msg_package"/>
+        <rosparam param="apps">
+            - ci_lab
+            - to_lab
+            - SBN
+        </rosparam>
+        <rosparam param="cmd_types">
+            - [CFE_ES_CMD_MID,      CFE_ES_START_PERF_DATA_CC,     CFE_ES_StartPerfCmd_Payload_t]
+            - [CFE_ES_CMD_MID,      CFE_ES_STOP_PERF_DATA_CC,      CFE_ES_StopPerfCmd_Payload_t]
+            - [CFE_SB_CMD_MID,      CFE_SB_SEND_SB_STATS_CC]
+            - [CFG_MAN_CMD_MID,     CFG_MAN_ADD_ATOM_CC,           CFG_MAN_Graph_Payload_t]
+            - [CFG_MAN_CMD_MID,     CFG_MAN_SET_CHAIN_CC,          CFG_MAN_SetChain_Payload_t]
+            - [CFG_MAN_CMD_MID,     CFG_MAN_SHUTDOWN_CC]
+            - [SBN_CMD_MID,         SBN_HK_PEER_CC]
+            - [TO_LAB_CMD_MID,      TO_OUTPUT_ENABLE_CC,           TO_LAB_EnableOutput_Payload_t]
+            - [TO_LAB_CMD_MID,      TO_OUTPUT_ENABLE_CC,           TO_LAB_EnableOutput_Payload_t]
+        </rosparam>
+        <rosparam param="tlm_types">
+            - [CFE_SB_HK_TLM_MID,      CFE_SB_HousekeepingTlm_Payload_t]
+            - [CFE_SB_STATS_TLM_MID,   CFE_SB_StatsTlm_Payload_t]
+        </rosparam>
+    </node>
+</launch>

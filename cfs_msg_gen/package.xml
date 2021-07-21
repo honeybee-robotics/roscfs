@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cfs_msg_gen</name>
+  <version>0.1.0</version>
+  <description>A generator of ROS message files from cFS structures.</description>
+
+  <maintainer email="jrbohren@honeybeerobotics.com">Jonathan Bohren</maintainer>
+  <author email="eabenevedes@honeybeerobotics.com">Eli Benevedes</maintainer>
+
+  <license>Apache2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <export>
+  </export>
+</package>
